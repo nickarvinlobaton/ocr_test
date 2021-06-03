@@ -22,41 +22,6 @@
     });
 })();
 
-function getDataUsingIndex(result) {
-  const startIndex = result.map(item => {
-    return item.description;
-  }).indexOf('recibido.');
-
-  const endIndex = result.map(item => {
-    return item.description;
-  }).indexOf('Last');
-
-  const gap = endIndex - startIndex;
-  console.log(gap)
-
-  let firstName = '';
-  let lastName = '';
-  let middleInitial = '';
-
-  if (gap > 1) {
-    lastName = result[startIndex + 1].description;
-  }
-
-  if (gap > 2) {
-    firstName = result[startIndex + 2].description;
-  }
-
-  if (gap > 3) {
-    middleInitial = result[startIndex + 3].description
-  }
-
-  return {
-    lastName,
-    firstName,
-    middleInitial,
-  };
-};
-
 function getNameUsingCoordinates(data) {
   // Remove first index as it contains whole vcard
   data.splice(0,1);
